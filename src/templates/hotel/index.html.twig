@@ -2,18 +2,24 @@
 
 {% block title %}Hotel index{% endblock %}
 
+{% block stylesheets %}
+    {{ encore_entry_link_tags('hotel') }}
+{% endblock %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('hotel') }}
+{% endblock %}
 {% block body %}
     <h1>Hotel index</h1>
-
+    <img src="{{ asset("build/images/2.jpeg") }}"/>
     <table class="table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Address</th>
-                <th>Description</th>
-                <th>actions</th>
-            </tr>
+        <tr>
+            <th class="th1">Id</th>
+            <th class="th1">Name</th>
+            <th class="th1">Address</th>
+            <th class="th1">Description</th>
+            <th class="th1">actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for hotel in hotels %}

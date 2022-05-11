@@ -1,3 +1,7 @@
+@import "~bootstrap";
+@import "./modules/hotel.css";
+@import "./modules/room.css";
+
 body {
     background-color: lightgray;
 }

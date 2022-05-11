@@ -3,7 +3,14 @@ FROM php:8.1-apache
 # use development config
 # https://hub.docker.com/_/php
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
-RUN apk ad --no-cache nodejs npm
+
+
+RUN curl https://deb.nodesource.com/setup_12.x | bash
+RUN curl https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+
+RUN apt-get update && apt-get install -y nodejs yarn postgresql-client
+
 # install composer
 # https://stackoverflow.com/a/58694421/1593188
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer

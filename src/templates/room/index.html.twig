@@ -1,18 +1,23 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Room index{% endblock %}
-
+{% block stylesheets %}
+    {{ encore_entry_link_tags('room') }}
+{% endblock %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('room') }}
+{% endblock %}
 {% block body %}
     <h1>Room index</h1>
 
     <table class="table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>BedNumber</th>
-                <th>IsEmpty</th>
-                <th>actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>BedNumber</th>
+            <th>IsEmpty</th>
+            <th>actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for room in rooms %}
