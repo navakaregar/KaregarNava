@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Search for {{ query }}{% endblock %}
+
+{% block body %}
+    {% for hotel in hotels %}
+        <tr>
+            <td>{{ hotel.id }}</td>
+            <td>{{ hotel.name }}</td>
+            <td>{{ hotel.address }}</td>
+            <td>
+                <a href="{{ path('app_hotel_show', {'id': hotel.id}) }}">show</a>
+                <a href="{{ path('app_hotel_edit', {'id': hotel.id}) }}">edit</a>
+            </td>
+        </tr>
+    {% else %}
+        <tr>
+            <td colspan="4">no records found</td>
+        </tr>
+    {% endfor %}
+{% endblock %}

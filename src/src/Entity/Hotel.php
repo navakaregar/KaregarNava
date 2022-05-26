@@ -19,12 +19,6 @@ class Hotel
     #[ORM\Column(type: 'string', length: 255)]
     private $address;
 
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private $description;
-
-    #[ORM\ManyToOne(targetEntity: Room::class, inversedBy: 'hotel')]
-    private $room;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -50,30 +44,6 @@ class Hotel
     public function setAddress(string $address): self
     {
         $this->address = $address;
-
-        return $this;
-    }
-
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(?string $description): self
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
-    public function getRoom(): ?Room
-    {
-        return $this->room;
-    }
-
-    public function setRoom(?Room $room): self
-    {
-        $this->room = $room;
 
         return $this;
     }
