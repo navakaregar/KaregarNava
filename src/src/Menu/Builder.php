@@ -25,6 +25,8 @@ class Builder
         $menu = $this->factory->createItem('root');
 
         $menu->addChild('Home', ['route' => 'home']);
+        $menu->addChild('About Us', ['route' => 'home']);
+        $menu->addChild('Contact Us', ['route' => 'home']);
 
         $hotelMenu= $menu->addChild('Hotel', ['route' => 'hotel']);
         $hotels=$this->entityManager->getRepository(Hotel::class)->findAll();
