@@ -8,9 +8,9 @@
 
     </head>
     <body>
-    <div>
-        {{ knp_menu_render('main') }}
-    </div>
+{#    <div>#}
+{#        {{ knp_menu_render('main') }}#}
+{#    </div>#}
 
     {% if is_granted("OS_AUTHENTICATED_REMEMBERED") %}
         <a href="{{ path("app_logout") }}">Logout</a>
